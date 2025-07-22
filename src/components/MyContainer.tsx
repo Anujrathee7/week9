@@ -26,6 +26,7 @@ const MyContainer: React.FC = ()=>{
             text: itemText,
             clicked: false
         }
+        setItemText('')
         setItems([newItem,...items])
     }
     
