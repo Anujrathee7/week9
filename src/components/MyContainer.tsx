@@ -12,7 +12,7 @@ const MyContainer: React.FC = ()=>{
     ])
     const [itemText,setItemText] = useState<string>('')
 
-    const updateClickedItem = (id: string) =>{
+    const updateList = (id: string) =>{
         const updatedItems: TItem[] = items.map((item)=>(
             item.id === id ? {...item, clicked: !item.clicked} : item
         ))
@@ -33,7 +33,7 @@ const MyContainer: React.FC = ()=>{
     const header = 'this is a string header'    
     return(
         <div>
-            <MyList header={header} items={items} updateList={updateClickedItem}/>
+            <MyList header={header} items={items} updateList={updateList}/>
 
             <textarea value={itemText} onChange={(e)=>{setItemText(e.target.value)}}></textarea>
             <button onClick={addItem}>Add Item</button>
